@@ -11,6 +11,7 @@ public class SpbootApplicationTests {
 
 	@Test
 	public void contextLoads() {
+		
 	}
 
 }
