@@ -1,4 +1,4 @@
-package com.spboot.spboot;
+package com.spboot.spboot.web;
 
 import org.junit.Before;
 import org.junit.Test;
