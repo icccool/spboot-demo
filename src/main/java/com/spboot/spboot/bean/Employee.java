@@ -1,5 +1,8 @@
 package com.spboot.spboot.bean;
 
+/**
+ * 员工实体
+ */
 public class Employee {
 	
 	private long id;
