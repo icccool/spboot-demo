@@ -6,6 +6,7 @@ package com.spboot.bean;
 public class Employee {
 	
 	private long id;
+
 	private String firstName;
 	
 	public long getId() {
