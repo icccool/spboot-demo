@@ -1,3 +1,20 @@
 pos:
   baseUrl: http://192.168.10.34:7002
   isOnline: 1
+  javaHome: ${JAVA_HOME}
+
+spring:
+  application:
+    name: h3-pos-transmission
+  profiles:
+    active: dev
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://192.168.10.130:3306/h3-ware?useUnicode=true&characterEncoding=utf-8&useSSL=false&allowMultiQueries=true
+    username: agent
+    password: agent123
+    type: com.alibaba.druid.pool.DruidDataSource
+
+mybatis:
+  mapper-locations: classpath:mapper/*Mapper.xml
+  type-aliases-package: com.spboot.mapper

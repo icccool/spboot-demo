@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.spboot.mapper.TwareunitegeneralnameMapper">
+  <resultMap id="BaseResultMap" type="com.spboot.bean.Twareunitegeneralname">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="unite_id" jdbcType="BIGINT" property="uniteId" />
+    <result column="generic_name_record_id" jdbcType="BIGINT" property="genericNameRecordId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, unite_id, generic_name_record_id
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_ware_unite_general_name
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from t_ware_unite_general_name
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.spboot.bean.Twareunitegeneralname">
+    insert into t_ware_unite_general_name (id, unite_id, generic_name_record_id
+      )
+    values (#{id,jdbcType=BIGINT}, #{uniteId,jdbcType=BIGINT}, #{genericNameRecordId,jdbcType=BIGINT}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.spboot.bean.Twareunitegeneralname">
+    insert into t_ware_unite_general_name
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="uniteId != null">
+        unite_id,
+      </if>
+      <if test="genericNameRecordId != null">
+        generic_name_record_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="uniteId != null">
+        #{uniteId,jdbcType=BIGINT},
+      </if>
+      <if test="genericNameRecordId != null">
+        #{genericNameRecordId,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.spboot.bean.Twareunitegeneralname">
+    update t_ware_unite_general_name
+    <set>
+      <if test="uniteId != null">
+        unite_id = #{uniteId,jdbcType=BIGINT},
+      </if>
+      <if test="genericNameRecordId != null">
+        generic_name_record_id = #{genericNameRecordId,jdbcType=BIGINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.spboot.bean.Twareunitegeneralname">
+    update t_ware_unite_general_name
+    set unite_id = #{uniteId,jdbcType=BIGINT},
+      generic_name_record_id = #{genericNameRecordId,jdbcType=BIGINT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

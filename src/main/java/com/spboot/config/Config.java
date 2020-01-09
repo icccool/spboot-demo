@@ -12,6 +12,9 @@ public class Config {
     @Value("${pos.baseUrl}")
     private String baseUrl;
 
+    @Value("${pos.javaHome}")
+    private String javaHome;
+
 
 	public String isOnline() {
 		return isOnline;
@@ -35,5 +38,13 @@ public class Config {
 
     public void setBaseUrl(String baseUrl) {
         this.baseUrl = baseUrl;
+    }
+
+    public String getJavaHome() {
+        return javaHome;
+    }
+
+    public void setJavaHome(String javaHome) {
+        this.javaHome = javaHome;
     }
 }
