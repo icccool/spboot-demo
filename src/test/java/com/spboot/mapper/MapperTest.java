@@ -34,7 +34,7 @@ public class MapperTest {
             Twareunite twareunite = new Twareunite();
             twareunite.setGroupId(100L);
             twareunite.setCompanyId(10002L);
-            twareunite.setSchemeName("感冒咳嗽联合" + (j++));
+            twareunite.setSchemeName("感冒咳嗽联合" + (j));
             twareunite.setUniteStatus((byte) 1);
             twareunite.setClassify((byte) 1);
             twareunite.setIndications("感冒咳嗽");
