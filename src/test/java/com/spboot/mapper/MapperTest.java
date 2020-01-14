@@ -1,6 +1,4 @@
 package com.spboot.mapper;
-import java.util.Date;
-
 import com.spboot.bean.Twareunite;
 import com.spboot.bean.Twareunitegeneralname;
 import org.junit.Test;
@@ -8,6 +6,8 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
+
+import java.util.Date;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -34,9 +34,9 @@ public class MapperTest {
             Twareunite twareunite = new Twareunite();
             twareunite.setGroupId(100L);
             twareunite.setCompanyId(10002L);
-            twareunite.setSchemeName("感冒咳嗽联合" + (j));
+            twareunite.setSchemeName("联合用药测试数据" + (j));
             twareunite.setUniteStatus((byte) 1);
-            twareunite.setClassify((byte) 1);
+            twareunite.setClassify((byte) 2); //通用名
             twareunite.setIndications("感冒咳嗽");
             twareunite.setPosShowOrder(0);
             twareunite.setCheckerScript("");
@@ -49,17 +49,17 @@ public class MapperTest {
 
             Twareunitegeneralname twareunitegeneralname = new Twareunitegeneralname();
             twareunitegeneralname.setUniteId(twareunite.getUniteId());
-            twareunitegeneralname.setGenericNameRecordId(8100001L);
+            twareunitegeneralname.setGenericNameRecordId(1L);
             twareunitegeneralnameMapper.insert(twareunitegeneralname);
 
             twareunitegeneralname = new Twareunitegeneralname();
             twareunitegeneralname.setUniteId(twareunite.getUniteId());
-            twareunitegeneralname.setGenericNameRecordId(8100022L);
+            twareunitegeneralname.setGenericNameRecordId(3L);
             twareunitegeneralnameMapper.insert(twareunitegeneralname);
 
             twareunitegeneralname = new Twareunitegeneralname();
             twareunitegeneralname.setUniteId(twareunite.getUniteId());
-            twareunitegeneralname.setGenericNameRecordId(8100008L);
+            twareunitegeneralname.setGenericNameRecordId(4L);
             twareunitegeneralnameMapper.insert(twareunitegeneralname);
 
             System.out.println("============"+twareunite.getUniteId()+"============");
