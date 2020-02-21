@@ -28,9 +28,9 @@ public class MapperTest {
     }
 
     @Test
-    public void insert() throws Exception {
+    public void insertUnite() throws Exception {
 
-        for (int j = 0; j < 300; j++) {
+        for (int j = 4; j < 5; j++) {
             Twareunite twareunite = new Twareunite();
             twareunite.setGroupId(100L);
             twareunite.setCompanyId(10002L);

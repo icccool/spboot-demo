@@ -75,8 +75,27 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+
+            <!--自动部署 mvn clean package wagon:upload-single-->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>wagon-maven-plugin</artifactId>
+                <version>1.0</version>
+                <configuration>
+                    <fromFile>target/spboot-mybatis.jar</fromFile>
+                    <url>scp://root:wjb#@10.211.55.4/usr/local/dubbo</url>
+                    <!--<commands>-->
+                    <!--<command>-->
+                    <!--nohup java -jar /data/project/app/Project.jar > /data/project/app/logs/monitor.log 2>&amp;1&amp;-->
+                    <!--</command>-->
+                    <!--</commands>-->
+                </configuration>
+            </plugin>
+
 		</plugins>
 	</build>
+
+
 
 
 </project>
