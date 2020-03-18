@@ -6,9 +6,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class TestController {
 
-	@RequestMapping("/test")
-	public String index() {
-		return "Hello, Test";
-	}
+    private int sum = 0;
+
+    @RequestMapping("/test")
+    public String index() {
+        sum = sum + 1;
+        System.out.println(String.format("tid = %s,sum=%s", Thread.currentThread().getId(), sum));
+        return "Hello, Test";
+    }
 
 }
