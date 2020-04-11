@@ -1,7 +1,19 @@
-pos:
-  baseUrl: http://192.168.10.34:7002
-  isOnline: 1
-  javaHome: ${JAVA_HOME}
+base:
+  nameServer : "base_nameServer"
+  groupname : "base_groupname"
+
+sub1:
+  nameServer : "sub1_nameServer"
+  groupname : "sub1_groupname"
+
+sub2:
+  nameServer : "sub2_nameServer"
+  groupname : "sub2_groupname"
+
+#数据库加密后密码
+database:
+  passwd: ENC(OtToysVnra2PAE1bJtkv6A==)
+
 
 #spring:
 #  application:
@@ -45,3 +57,6 @@ spring:
 mybatis:
   mapper-locations: classpath:mapper/*Mapper.xml
   type-aliases-package: com.spboot.mapper
+
+server:
+  port: 8090
