@@ -19,7 +19,7 @@ public class Sub1 extends BaseExt2 {
     private String nameServer1;
 
     public String getNameServer() {
-        return nameServer1 + "222";
+        return nameServer1 + "(子类重写了getNameServer())";
     }
 
 }

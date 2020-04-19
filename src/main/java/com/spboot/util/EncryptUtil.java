@@ -30,7 +30,7 @@ public class EncryptUtil {
     /**
      * 可以理解为加密salt
      */
-    private static String PASSWORD = "klklklklklklklkl";
+    private static String PASSWORD = "w123456";
 
     /**
      * 加密算法

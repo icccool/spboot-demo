@@ -3,7 +3,7 @@ package com.spboot.config;
 import org.springframework.beans.factory.annotation.Value;
 
 //@Component
-public class Config {
+public class MyConfig {
 
     @Value("${pos.isOnline}")
 	private String isOnline;

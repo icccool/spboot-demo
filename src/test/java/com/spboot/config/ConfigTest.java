@@ -13,7 +13,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 public class ConfigTest {
 
 	@Autowired
-	Config config;
+    MyConfig config;
 	
 	@Test
 	public void test() throws Exception {
