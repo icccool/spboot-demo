@@ -27,14 +27,30 @@ trans-up-conf:
 
 #数据库加密后密码
 database:
-  passwd: ENC(OtToysVnra2PAE1bJtkv6A==)
+  passwd: ENC(Xz2ftn7DiNI45JzekX2CKJZltggG++f6)
 
+jasypt:
+  encryptor:
+    password: w123456
 
 spring:
   application:
     name: h3-pos-transmission
   profiles:
     active: dev
+  redis:
+    database: 0
+    password: hydeesoft
+    jedis:
+      pool:
+        max-active: 10000
+        max-idle: 50
+        max-wait: -1
+        min-idle: 0
+    sentinel:
+      master: mymaster
+      nodes: 192.168.10.33:26379,192.168.10.33:26479,192.168.10.33:26579
+    timeout: 0
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
     url: jdbc:mysql://192.168.10.130:3306/h3-ware?useUnicode=true&characterEncoding=utf-8&useSSL=false&allowMultiQueries=true
