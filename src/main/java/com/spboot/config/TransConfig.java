@@ -13,8 +13,8 @@ import java.util.Map;
  * @Date 2020/4/17 9:55 下午
  * @Description
  **/
-@Component
-@ConfigurationProperties(prefix = "trans-up-conf")
+//@Component
+//@ConfigurationProperties(prefix = "trans-up-conf")
 public class TransConfig {
 
     private Map<String, JSONObject> maps;

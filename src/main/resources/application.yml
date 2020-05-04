@@ -1,17 +1,65 @@
-#redis 使用
+server:
+  port: 8090
+
+redis:
+  pattern: sentinel
+#  host: 172.16.0.222
+#  password: HydeeH3_222
+#  port: 6381
+
+spring:
+  application:
+    name: h3-spboot-demo
+  profiles:
+    active: dev
+  redis:
+    database: 0
+    password: hydeesoft
+    jedis:
+      pool:
+        max-active: 10000
+        max-idle: 50
+        max-wait: -1
+        min-idle: 0
+    sentinel:
+      master: mymaster
+      nodes: 192.168.10.33:26379,192.168.10.33:26479,192.168.10.33:26579
+    timeout: 0
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://192.168.10.130:3306/h3_ware?useUnicode=true&characterEncoding=utf-8&useSSL=false&allowMultiQueries=true
+    username: agent
+    password: agent123
+    type: com.alibaba.druid.pool.DruidDataSource
+
+    druid:
+      initial-size: 5
+      max-active: 100
+      max-pool-prepared-statement-per-connection-size: 20
+      max-wait: 60000
+      min-evictable-idle-time-millis: 100000
+      min-idle: 5
+      pool-prepared-statements: true
+      test-on-borrow: false
+      test-on-return: false
+      test-while-idle: true
+      time-between-eviction-runs-millis: 60000
+      validation-query: SELECT 1 FROM DUAL
+      validation-query-timeout: 60000
+
 
 #使用子类覆盖父类的参数
 base:
-  nameServer : "base_nameServer"
-  groupname : "base_groupname"
+  nameServer: "base_nameServer"
+  groupname: "base_groupname"
 
 sub1:
-  nameServer : "sub1_nameServer"
-  groupname : "sub1_groupname_rewrite"
+  nameServer: "sub1_nameServer"
+  groupname: "sub1_groupname_rewrite"
 
 sub2:
-  nameServer : "sub2_nameServer"
-  groupname : "sub2_groupname"
+  nameServer: "sub2_nameServer"
+  groupname: "sub2_groupname"
 
 #读取Map格式
 trans-up-conf:
@@ -33,34 +81,21 @@ jasypt:
   encryptor:
     password: w123456
 
-spring:
-  application:
-    name: h3-pos-transmission
-  profiles:
-    active: dev
-  redis:
-    database: 0
-    password: hydeesoft
-    jedis:
-      pool:
-        max-active: 10000
-        max-idle: 50
-        max-wait: -1
-        min-idle: 0
-    sentinel:
-      master: mymaster
-      nodes: 192.168.10.33:26379,192.168.10.33:26479,192.168.10.33:26579
-    timeout: 0
-  datasource:
-    driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://192.168.10.130:3306/h3-ware?useUnicode=true&characterEncoding=utf-8&useSSL=false&allowMultiQueries=true
-    username: agent
-    password: agent123
-    type: com.alibaba.druid.pool.DruidDataSource
-
 mybatis:
   mapper-locations: classpath:mapper/*Mapper.xml
   type-aliases-package: com.spboot.mapper
 
-server:
-  port: 8090
+logs:
+  info:
+    file: ${user.dir}/logs/${spring.application.name}.info.log
+    max-history: 7
+  error:
+    file: ${user.dir}/logs/${spring.application.name}.error.log
+    max-history: 7
+  audit:
+    file: ${user.dir}/logs/${spring.application.name}.audit.log
+    max-history: 7
+logging:
+  file: ${user.dir}/logs/${spring.application.name}.info.log
+  level:
+    root: INFO

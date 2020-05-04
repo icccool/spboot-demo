@@ -30,7 +30,7 @@ public class EncryptUtil {
     /**
      * 可以理解为加密salt
      */
-    private static String PASSWORD = "w123456";
+    private static String PASSWORD = "eaf7828d2e7c6c0";
 
     /**
      * 加密算法
@@ -61,7 +61,8 @@ public class EncryptUtil {
     }
 
     public static void main(String[] args) {
-        System.out.println(getEncryptedParams("hydeexxxdb"));//print : {input=Ore69lUopDHL5R8Bw/G3bQ==, password=klklklklklklklkl}
+
+        System.out.println(getEncryptedParams("h3_tmp"));//print : {input=Ore69lUopDHL5R8Bw/G3bQ==, password=klklklklklklklkl}
     }
 
     /**

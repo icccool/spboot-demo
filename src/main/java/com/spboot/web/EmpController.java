@@ -21,14 +21,6 @@ public class EmpController {
     }
 
 
-    @RequestMapping(value = "/", method = RequestMethod.POST)
-    public String postUser(@ModelAttribute Employee emp) {
-        // 处理"/users/"的POST请求，用来创建User
-        // 除了@ModelAttribute绑定参数之外，还可以通过@RequestParam从页面中传递参数
-        emps.put(emp.getId(), emp);
-        return "success";
-    }
-
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public Employee getUser(@PathVariable Long id) {
         // 处理"/users/{id}"的GET请求，用来获取url中id值的User信息
