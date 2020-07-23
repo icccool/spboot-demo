@@ -24,28 +24,11 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
         <rocketmq.version>4.3.0</rocketmq.version>
-        <order.api.version>1.5.0-${api.env}-SNAPSHOT</order.api.version>
-        <trade.api.version>1.5.0-${api.env}-SNAPSHOT</trade.api.version>
-        <price.api.version>1.4.0-${api.env}-SNAPSHOT</price.api.version>
-
         <skywalking.version>7.0.0</skywalking.version>
         <fastjson.version>1.2.61</fastjson.version>
-
     </properties>
 
     <dependencies>
-
-<!--        <dependency>-->
-<!--            <groupId>com.hydee.h3</groupId>-->
-<!--            <artifactId>h3-internal-api-price</artifactId>-->
-<!--            <version>${price.api.version}</version>-->
-<!--        </dependency>-->
-
-        <!--        <dependency>-->
-        <!--            <groupId>com.hydee.h3</groupId>-->
-        <!--            <artifactId>h3-internal-api-order</artifactId>-->
-        <!--            <version>${order.api.version}</version>-->
-        <!--        </dependency>-->
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -108,48 +91,6 @@
             <artifactId>rocketmq-client</artifactId>
             <version>${rocketmq.version}</version>
         </dependency>
-
-<!--        <dependency>-->
-<!--            <groupId>org.springframework.boot</groupId>-->
-<!--            <artifactId>spring-boot-starter-data-redis</artifactId>-->
-<!--            <exclusions>-->
-<!--                <exclusion>-->
-<!--                    <groupId>io.lettuce</groupId>-->
-<!--                    <artifactId>lettuce-core</artifactId>-->
-<!--                </exclusion>-->
-<!--            </exclusions>-->
-<!--            <version>2.0.1.RELEASE</version>-->
-<!--        </dependency>-->
-
-<!--        <dependency>-->
-<!--            <groupId>redis.clients</groupId>-->
-<!--            <artifactId>jedis</artifactId>-->
-<!--            <version>2.9.0</version>-->
-<!--        </dependency>-->
-
-        <dependency>
-            <groupId>com.hydee.common</groupId>
-            <artifactId>common-log</artifactId>
-            <version>1.5.2-SNAPSHOT</version>
-        </dependency>
-
-
-<!--        <dependency>-->
-<!--            <groupId>com.hydee.common</groupId>-->
-<!--            <artifactId>common-redis</artifactId>-->
-<!--            <version>1.5.2-SNAPSHOT</version>-->
-<!--            <exclusions>-->
-<!--                <exclusion>-->
-<!--                    <groupId>redis.clients</groupId>-->
-<!--                    <artifactId>jedis</artifactId>-->
-<!--                </exclusion>-->
-<!--            </exclusions>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>redis.clients</groupId>-->
-<!--            <artifactId>jedis</artifactId>-->
-<!--            <version>3.0.1</version>-->
-<!--        </dependency>-->
 
         <!-- skywalking -->
         <dependency>

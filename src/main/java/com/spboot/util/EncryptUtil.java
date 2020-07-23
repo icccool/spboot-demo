@@ -30,12 +30,15 @@ public class EncryptUtil {
     /**
      * 可以理解为加密salt
      */
-    private static String PASSWORD = "eaf7828d2e7c6c0";
+    private static String PASSWORD = "12c242424442432";//pro
+
+    private static String UAT_PASSWORD = "eaf7828d2e7c6c0";//uat
 
     /**
      * 加密算法
      */
     private static String ALGORITHM = "PBEWithMD5AndDES";
+
 
     public static Map getEncryptedParams(String input) {
         //输出流
@@ -61,8 +64,7 @@ public class EncryptUtil {
     }
 
     public static void main(String[] args) {
-
-        System.out.println(getEncryptedParams("h3_tmp"));//print : {input=Ore69lUopDHL5R8Bw/G3bQ==, password=klklklklklklklkl}
+        System.out.println(getEncryptedParams("K6CJLfR6Z!ay"));//print : {input=Ore69lUopDHL5R8Bw/G3bQ==, password=klklklklklklklkl}
     }
 
     /**

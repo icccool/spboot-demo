@@ -62,16 +62,14 @@ sub2:
   groupname: "sub2_groupname"
 
 #读取Map格式
-trans-up-conf:
-  maps:
-    t_order_info1:
-      type: "订单"
-      url: ""
-      rela_table: "{\"order_detail\":{\"id\":\"order_id\"}}"
-    t_order_info2:
-      type: "订单"
-      url: ""
-      rela_table: ""
+cloud:
+  promotion-order-count-demand: 500
+  trans-down-status: 1
+  trans-up-status: 1
+  transUpConf:
+    t_order_info: {"busi_name":"订单","url": "/trade/trade_transmit/add_trade","rela_tables":"{\"t_order_detail\":{\"order_id\":\"id\"}}"}
+    t_prescription: {"busi_name":"处方信息","url":"/trade/prescription/receive_data"}
+    separate_check: {"busi_name":"拆零复核","url":"/warehouse/separate_check/save_upload_record"}
 
 #数据库加密后密码
 database:

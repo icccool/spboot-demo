@@ -25,8 +25,8 @@ public class SpbootApplication implements InitializingBean {
 //    @Autowired
 //    private RedisTemplate redisTemplate;
 
-
-
+    @Autowired
+    TransConfig transConfig;
 
     public static void main(String[] args) {
         SpringApplication.run(SpbootApplication.class, args);
@@ -36,6 +36,7 @@ public class SpbootApplication implements InitializingBean {
     public void afterPropertiesSet() throws Exception {
         logger.info("==========================================================");
         logger.info("测试使用jasypt配置脱敏密码:" + passwd);
+        logger.info("transConfig:" + transConfig);
 //        logger.info("读取yml Map配置 = :" + transConfig.getMaps());
 //        redisTemplate.opsForValue().set("db-type", "redis测试");
 //        logger.info(redisTemplate.opsForValue().get("db-type").toString()); // 结果： redis
