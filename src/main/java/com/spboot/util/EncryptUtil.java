@@ -8,6 +8,7 @@ package com.spboot.util;
 
 import com.alibaba.druid.util.StringUtils;
 import org.jasypt.intf.cli.JasyptPBEStringEncryptionCLI;
+import org.jasypt.util.text.BasicTextEncryptor;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
@@ -40,6 +41,11 @@ public class EncryptUtil {
     private static String ALGORITHM = "PBEWithMD5AndDES";
 
 
+    /**
+     * 加密
+     * @param input
+     * @return
+     */
     public static Map getEncryptedParams(String input) {
         //输出流
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream(1024);
@@ -58,13 +64,26 @@ public class EncryptUtil {
 
         //返回加密后的数据
         Map result = new HashMap();
-        result.put("input", "ENC("+str.substring(index + 1)+")");
+        result.put("input", "ENC(" + str.substring(index + 1) + ")");
         result.put("password", PASSWORD);
         return result;
     }
 
+    /***
+     * 解密
+     * @param passwd
+     * @param str
+     * @return
+     */
+    public static String getDecryptStr(String passwd, String str) {
+        BasicTextEncryptor textEncryptor = new BasicTextEncryptor();
+        textEncryptor.setPassword(passwd);
+        return textEncryptor.decrypt("tY4hxKRTUJcxo6ZZx9yK8NJoDpOQdsEMFW6Y4U6UKxk=");
+    }
+
+
     public static void main(String[] args) {
-        System.out.println(getEncryptedParams("K6CJLfR6Z!ay"));//print : {input=Ore69lUopDHL5R8Bw/G3bQ==, password=klklklklklklklkl}
+        //System.out.println(getEncryptedParams("K6CJLfR6Z!ay"));//print : {input=Ore69lUopDHL5R8Bw/G3bQ==, password=klklklklklklklkl}
     }
 
     /**
