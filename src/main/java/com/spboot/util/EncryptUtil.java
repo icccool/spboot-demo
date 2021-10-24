@@ -85,7 +85,6 @@ public class EncryptUtil {
         System.out.println("加密结果1：" + getEncryptedParams("BSMOYF!5@21#4",UAT_PASSWORD));
 
     }
-
     /**
      * 替换制表符、空格、换行符
      *
