@@ -1,9 +1,11 @@
 1. Spring Boot 动态配置日志级别
 https://blog.csdn.net/TRAMP_ZZY/article/details/77772106
 
-2. 2020-02-21 pom.xml 增加自动部署
+2. 2020-02-21 pom.xml 增加自动部署。
 
-3. rocket发送事务消息
+3. 增加rocket发送事务消息。
+
+4. 增加spring mongodbTemplate配置。
 
 
 
