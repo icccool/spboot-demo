@@ -46,7 +46,7 @@ public class EncryptUtil {
      * @param input
      * @return
      */
-    public static Map getEncryptedParams(String input) {
+    public static Map getEncryptedParams(String input,String password) {
         //输出流
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream(1024);
         PrintStream cacheStream = new PrintStream(byteArrayOutputStream);
@@ -54,7 +54,7 @@ public class EncryptUtil {
         System.setOut(cacheStream);
 
         //加密参数组装
-        String[] args = {"input=" + input, "password=" + PASSWORD, "algorithm=" + ALGORITHM};
+        String[] args = {"input=" + input, "password=" + password, "algorithm=" + ALGORITHM};
         JasyptPBEStringEncryptionCLI.main(args);
 
         //执行加密后的输出
@@ -65,7 +65,7 @@ public class EncryptUtil {
         //返回加密后的数据
         Map result = new HashMap();
         result.put("input", "ENC(" + str.substring(index + 1) + ")");
-        result.put("password", PASSWORD);
+        result.put("password", password);
         return result;
     }
 
@@ -81,9 +81,9 @@ public class EncryptUtil {
         return textEncryptor.decrypt("tY4hxKRTUJcxo6ZZx9yK8NJoDpOQdsEMFW6Y4U6UKxk=");
     }
 
-
     public static void main(String[] args) {
-        //System.out.println(getEncryptedParams("K6CJLfR6Z!ay"));//print : {input=Ore69lUopDHL5R8Bw/G3bQ==, password=klklklklklklklkl}
+        System.out.println("加密结果1：" + getEncryptedParams("BSMOYF!5@21#4",UAT_PASSWORD));
+
     }
 
     /**
